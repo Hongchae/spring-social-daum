@@ -35,7 +35,7 @@ public class DaumTemplate extends AbstractOAuth2ApiBinding implements Daum {
 
     public <T> T post(URI uri, MultiValueMap<String, String> data, Class<T> resultType) {
         logger.debug("Kakao template post uri: " + uri.toString());
-        return getRestTemplate().postForObject(uri, new LinkedMultiValueMap<>(data), resultType);
+        return getRestTemplate().postForObject(uri, new LinkedMultiValueMap<String, String>(data), resultType);
     }
 
     public void delete(URI uri) {
